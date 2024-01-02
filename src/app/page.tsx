@@ -1,6 +1,8 @@
-import Image from 'next/image';
+import styles from './page.module.css';
+import Switch from '@mui/material/Switch';
+
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 export default function Home() {
-  // Programatically control routes
-  return <main></main>;
+  return <div className={styles.container}></div>;
 }
