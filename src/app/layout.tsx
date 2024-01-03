@@ -15,6 +15,9 @@ export const metadata: Metadata = {
 /* 
 TO DRILL THEME :  https://blog.logrocket.com/getting-started-mui-next-js/`
 <ThemeRegistry options={{ key: 'mui-theme' }}>{children}</ThemeRegistry>
+              or 
+{/* <AppRouterCacheProvider>{children}</AppRouterCacheProvider> } 
+
 */
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -23,7 +26,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html lang="en">
         <body>
           <ThemeRegistry options={{ key: 'mui-theme' }}>{children}</ThemeRegistry>
-          {/* <AppRouterCacheProvider>{children}</AppRouterCacheProvider> */}
         </body>
       </html>
     </Providers>
