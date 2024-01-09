@@ -1,4 +1,4 @@
-'use client'
+'use client';
 // ** React Import
 import { ReactNode, useRef, useState } from 'react';
 
@@ -36,7 +36,7 @@ interface Props {
   verticalNavItems?: VerticalNavItemsType;
   saveSettings: (values: Settings) => void;
   verticalNavMenuContent?: (props?: any) => ReactNode;
-  afterVerticalNavMenuContent?: (props?: any) => ReactNode;
+  // afterVerticalNavMenuContent?: (props?: any) => ReactNode;
   beforeVerticalNavMenuContent?: (props?: any) => ReactNode;
 }
 
@@ -58,7 +58,7 @@ const Navigation = (props: Props) => {
   // ** Props
   const {
     hidden,
-    afterVerticalNavMenuContent,
+    // afterVerticalNavMenuContent,
     beforeVerticalNavMenuContent,
     verticalNavMenuContent: userVerticalNavMenuContent,
   } = props;
@@ -73,7 +73,6 @@ const Navigation = (props: Props) => {
   // ** Hooks
   const theme = useTheme();
 
- 
   // ** Fixes Navigation InfiniteScroll
   const handleInfiniteScroll = (ref: HTMLElement) => {
     if (ref) {
@@ -105,12 +104,12 @@ const Navigation = (props: Props) => {
   };
 
   const ScrollWrapper = hidden ? Box : PerfectScrollbar;
- 
-  // console.log('====> groupActive',  groupActive); 
-  // console.log('====> setGroupActive',  setGroupActive); 
-  // console.log('====> currentActiveGroup',  currentActiveGroup); 
-  // console.log('====> setCurrentActiveGroup',  setCurrentActiveGroup); 
-  
+
+  // console.log('====> groupActive',  groupActive);
+  // console.log('====> setGroupActive',  setGroupActive);
+  // console.log('====> currentActiveGroup',  currentActiveGroup);
+  // console.log('====> setCurrentActiveGroup',  setCurrentActiveGroup);
+
   return (
     <Drawer {...props}>
       <VerticalNavHeader {...props} />
@@ -162,7 +161,7 @@ const Navigation = (props: Props) => {
           </Box>
         </ScrollWrapper>
       </Box>
-      {afterVerticalNavMenuContent ? afterVerticalNavMenuContent(props) : null}
+      {/* {afterVerticalNavMenuContent ? afterVerticalNavMenuContent(props) : null} */}
     </Drawer>
   );
 };
