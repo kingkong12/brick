@@ -27,6 +27,7 @@ import Footer from './shared-component';
 import themeConfig from '@/configs/themeConfig';
 import { LayoutProps } from './types';
 import ScrollToTop from './scroll-to-top';
+import MUITable from './tables';
 
 const VerticalLayoutWrapper = styled('div')({
   height: '100%',
@@ -93,6 +94,7 @@ const VerticalLayout = (props: LayoutProps) => {
             }}
           >
             {children}
+            <MUITable />
           </ContentWrapper>
 
           {/* Footer Component */}
