@@ -1,9 +1,10 @@
-import { createEmotionCache } from '@/utils/create-emotion-cache';
 import styles from './page.module.css';
-import { CacheProvider } from '@emotion/react';
+import Switch from '@mui/material/Switch';
+
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 export default function Home() {
-  return <CacheProvider value={createEmotionCache()}></CacheProvider>;
+
+  return <div className={styles.container}>sssd</div>;
 }
