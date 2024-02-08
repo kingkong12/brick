@@ -105,10 +105,18 @@ const Navigation = (props: Props) => {
 
   const ScrollWrapper = hidden ? Box : PerfectScrollbar;
 
-  // console.log('====> groupActive',  groupActive);
-  // console.log('====> setGroupActive',  setGroupActive);
-  // console.log('====> currentActiveGroup',  currentActiveGroup);
-  // console.log('====> setCurrentActiveGroup',  setCurrentActiveGroup);
+  const temp = {
+    ...(hidden
+      ? {
+          onScroll: (container: any) => scrollMenu(container),
+          sx: { height: '100%', overflowY: 'auto', overflowX: 'hidden' },
+        }
+      : {
+          options: { wheelPropagation: false },
+          onScrollY: (container: any) => scrollMenu(container),
+          containerRef: (ref: any) => handleInfiniteScroll(ref),
+        }),
+  };
 
   return (
     <Drawer {...props}>
@@ -124,18 +132,7 @@ const Navigation = (props: Props) => {
       />
       <Box sx={{ height: '100%', position: 'relative', overflow: 'hidden' }}>
         {/* @ts-ignore */}
-        <ScrollWrapper
-          {...(hidden
-            ? {
-                onScroll: (container: any) => scrollMenu(container),
-                sx: { height: '100%', overflowY: 'auto', overflowX: 'hidden' },
-              }
-            : {
-                options: { wheelPropagation: false },
-                onScrollY: (container: any) => scrollMenu(container),
-                containerRef: (ref: any) => handleInfiniteScroll(ref),
-              })}
-        >
+        <ScrollWrapper>
           {beforeVerticalNavMenuContent ? beforeVerticalNavMenuContent(props) : null}
           <Box
             sx={{

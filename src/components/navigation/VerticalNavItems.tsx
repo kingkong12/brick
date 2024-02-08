@@ -20,7 +20,6 @@ interface Props {
 }
 
 const resolveNavItemComponent = (item: NavLink | NavSectionTitle) => {
-  console.log('====> currentActiveGroup',  item); 
   if ((item as NavSectionTitle).sectionTitle) return VerticalNavSectionTitle;
   return VerticalNavLink;
 };

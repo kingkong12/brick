@@ -1,4 +1,3 @@
-'use client'
 // ** MUI Imports
 import Box from '@mui/material/Box';
 import { Theme } from '@mui/material/styles';
@@ -21,6 +20,7 @@ import { Settings } from '@/context/settingsContext';
 import ModeToggler from './ModeToggler';
 import UserDropdown from './UserDropdown';
 import NotificationDropdown from './NotificationDropdown';
+import { useTheme } from '@mui/material/styles';
 
 interface Props {
   hidden: boolean;
@@ -41,15 +41,6 @@ const AppBarContent = (props: Props) => {
       sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
     >
       <Box className="actions-left" sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
-        {hidden ? (
-          <IconButton
-            color="inherit"
-            onClick={toggleNavVisibility}
-            sx={{ ml: -2.75, ...(hiddenSm ? {} : { mr: 3.5 }) }}
-          >
-            <Menu />
-          </IconButton>
-        ) : null}
         <TextField
           size="small"
           sx={{ '& .MuiOutlinedInput-root': { borderRadius: 4 } }}
@@ -63,7 +54,7 @@ const AppBarContent = (props: Props) => {
         />
       </Box>
       <Box className="actions-right" sx={{ display: 'flex', alignItems: 'center' }}>
-        {hiddenSm ? null : (
+        {/* {hiddenSm ? null : (
           <Box
             component="a"
             target="_blank"
@@ -77,8 +68,8 @@ const AppBarContent = (props: Props) => {
               src="https://img.shields.io/github/stars/themeselection/materio-mui-react-nextjs-admin-template-free?style=social"
             />
           </Box>
-        )}
-        <ModeToggler settings={settings} saveSettings={saveSettings} />
+        )} */}
+        {/* <ModeToggler settings={settings} saveSettings={saveSettings} /> */}
         <NotificationDropdown />
         <UserDropdown />
       </Box>

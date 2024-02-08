@@ -25,6 +25,7 @@ import VerticalNavItems from '../../components/navigation/VerticalNavItems';
 import AppBarContent from '../../components/AppBarContent';
 import navigation from '@/vertical';
 import { useSettings } from '@/hooks/useSettings';
+import { styled, useTheme } from '@mui/material/styles';
 
 interface Props {
   children: ReactNode;
@@ -33,6 +34,7 @@ interface Props {
 const UserLayout = ({ children }: Props) => {
   // ** Hooks
   const { settings, saveSettings } = useSettings();
+  const theme = useTheme();
 
   /**
    *  The below variable will hide the current layout menu at given screen size.

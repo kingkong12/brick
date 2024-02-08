@@ -34,19 +34,22 @@ const VerticalLayoutWrapper = styled('div')({
   display: 'flex',
 });
 
-const MainContentWrapper = styled(Box)<BoxProps>({
+const MainContentWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   flexGrow: 1,
   minWidth: 0,
   display: 'flex',
   minHeight: '100vh',
   flexDirection: 'column',
-});
+  // backgroundColor: 'red', // background
+  backgroundColor: theme.palette.background.default, //  to do : color l oads twice  patch
+}));
 
 const ContentWrapper = styled('main')(({ theme }) => ({
   flexGrow: 1,
   width: '100%',
   padding: theme.spacing(6),
   transition: 'padding .25s ease-in-out',
+
   [theme.breakpoints.down('sm')]: {
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4),

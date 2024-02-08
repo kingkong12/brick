@@ -91,7 +91,6 @@ const VerticalNavLink = ({ item, navVisible, toggleNavVisibility }: Props) => {
     >
       <>
         <MenuNavLink
-          passHref
           component={'div'}
           className={isNavLinkActive() ? 'active' : ''}
           {...(item.openInNewTab ? { target: '_blank' } : null)}
